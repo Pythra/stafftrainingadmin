@@ -53,3 +53,5 @@ Create a **Pages** project instead of Workers:
 - No `wrangler deploy` needed.
 
 SPA routing is handled by `not_found_handling` in `wrangler.toml` — do not add a `public/_redirects` file (it conflicts with Workers static assets).
+
+If deploy still fails with an `_redirects` infinite-loop error, **clear the Cloudflare build cache** (Workers → your project → Settings → Builds → clear cache) and redeploy.
