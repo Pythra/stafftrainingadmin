@@ -1,4 +1,4 @@
-name = "crunches-admin"
+name = "stafftrainingadmin"
 compatibility_date = "2024-09-23"
 
 # Runs automatically before `wrangler deploy` (and `wrangler dev`)

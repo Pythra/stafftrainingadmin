@@ -51,3 +51,5 @@ Create a **Pages** project instead of Workers:
 - **Build command:** `npm run build`  
 - **Build output directory:** `dist`  
 - No `wrangler deploy` needed.
+
+SPA routing is handled by `not_found_handling` in `wrangler.toml` — do not add a `public/_redirects` file (it conflicts with Workers static assets).
