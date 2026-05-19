@@ -27,10 +27,12 @@ In **Cloudflare Workers** (or Workers Builds) project settings:
 | Setting | Value |
 |--------|--------|
 | **Root directory** | `/` (or leave empty) |
-| **Build command** | `npm ci && npm run build` |
+| **Build command** | *(leave empty)* — Cloudflare already runs `npm ci`; `wrangler.toml` runs `npm run build` before deploy |
 | **Deploy command** | `npx wrangler deploy` |
 
-Or use a single deploy command: `npm run deploy`
+If your dashboard has a separate **Build command** field, set it to `npm run build` and keep deploy as `npx wrangler deploy`.
+
+Or use one deploy command only: `npm run deploy`
 
 ### If the repo root is a parent folder
 
