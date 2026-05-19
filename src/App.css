@@ -1,0 +1,2635 @@
+/* Qiimeet-style layout: predominantly white, red accent */
+.layout.qiimeet-style {
+  display: flex;
+  min-height: 100vh;
+  background: #fff;
+  padding: 24px;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  gap: 0;
+}
+
+.layout.qiimeet-style .sidebar {
+  width: 320px;
+  min-width: 320px;
+  height: fit-content;
+  min-height: calc(100vh - 48px);
+  background: #fefce8;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.layout.qiimeet-style .brand {
+  padding: 24px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.layout.qiimeet-style .brand-crunchies {
+  background: #E31E24;
+  border-radius: 8px 8px 0 0;
+  margin: -1px -1px 8px;
+  padding: 20px 24px;
+}
+
+.layout.qiimeet-style .brand-logo-img {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.layout.qiimeet-style .brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #E31E24;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.layout.qiimeet-style .brand:not(.brand-crunchies) .brand-logo-img {
+  display: none;
+}
+
+.layout.qiimeet-style .brand-crunchies .brand-text h1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.layout.qiimeet-style .brand-crunchies .brand-text p {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.layout.qiimeet-style .brand-text h1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #121212;
+  margin: 0;
+}
+
+.layout.qiimeet-style .brand-text p {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.layout.qiimeet-style .sidebar-nav {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.layout.qiimeet-style .sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.layout.qiimeet-style .sidebar-logout {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.layout.qiimeet-style .tab-btn-logout {
+  background: transparent;
+  color: #6b7280;
+}
+
+.layout.qiimeet-style .tab-btn-logout:hover {
+  background: #fefce8;
+  color: #E31E24;
+}
+
+.layout.qiimeet-style .sidebar-nav li {
+  margin-bottom: 12px;
+}
+
+.layout.qiimeet-style .tab-btn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  background: #fefce8;
+  color: #121212;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  transition: background 0.2s ease, color 0.2s ease;
+  min-height: auto;
+  height: auto;
+}
+
+.layout.qiimeet-style .tab-btn:hover:not(.active) {
+  background: #fce7e7;
+}
+
+.layout.qiimeet-style .tab-btn.active {
+  background: #E31E24;
+  color: #fff;
+}
+
+.layout.qiimeet-style .tab-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.layout.qiimeet-style .tab-btn .tab-icon svg {
+  flex-shrink: 0;
+}
+
+/* Header */
+.layout.qiimeet-style .main-wrap {
+  flex: 1;
+  padding-left: 24px;
+  padding-right: 24px;
+  min-width: 0;
+}
+
+.layout.qiimeet-style .dashboard-header {
+  background: #fff;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.layout.qiimeet-style .header-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #121212;
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.layout.qiimeet-style .header-bell-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  background: #fefce8;
+  border: 1px solid #fecaca;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.layout.qiimeet-style .header-bell-btn:hover {
+  background: #fefce8;
+  border-color: #fecaca;
+  color: #E31E24;
+}
+
+.layout.qiimeet-style .header-bell-btn .tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout.qiimeet-style .header-bell-btn .tab-icon svg {
+  stroke: currentColor;
+}
+
+.layout.qiimeet-style .header-bell-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: #E31E24;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout.qiimeet-style .notifications-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.layout.qiimeet-style .notifications-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.layout.qiimeet-style .notifications-item:last-child {
+  border-bottom: none;
+}
+
+.layout.qiimeet-style .notifications-item.unread {
+  background: #fefce8;
+  margin: 0 -24px;
+  padding: 1rem 24px;
+}
+
+.layout.qiimeet-style .notifications-type {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin-bottom: 0.35rem;
+}
+
+.layout.qiimeet-style .notifications-type--quiz_passed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.layout.qiimeet-style .notifications-type--quiz_locked {
+  background: #fefce8;
+  color: #b91c1c;
+}
+
+.layout.qiimeet-style .notifications-type--course_certified {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.layout.qiimeet-style .notifications-message {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+.layout.qiimeet-style .notifications-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.layout.qiimeet-style .notifications-mark-read {
+  background: none;
+  border: none;
+  color: #E31E24;
+  padding: 0;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.layout.qiimeet-style .notifications-actions {
+  margin-top: 0.75rem;
+}
+
+/* Staff grid (Qiimeet-style cards) */
+.layout.qiimeet-style .staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.layout.qiimeet-style .staff-grid-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: #111827;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.layout.qiimeet-style .staff-grid-card:hover {
+  border-color: #E31E24;
+  box-shadow: 0 2px 8px rgba(227, 30, 36, 0.12);
+}
+
+.layout.qiimeet-style .staff-grid-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.layout.qiimeet-style .staff-grid-id {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.layout.qiimeet-style .staff-grid-time {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Staff detail page */
+.layout.qiimeet-style .staff-detail-card {
+  position: relative;
+}
+
+.layout.qiimeet-style .staff-detail-back {
+  margin-bottom: 1rem;
+}
+
+.layout.qiimeet-style .staff-detail-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.layout.qiimeet-style .staff-detail-header h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  color: #111827;
+}
+
+.layout.qiimeet-style .staff-detail-meta {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.layout.qiimeet-style .staff-detail-section {
+  margin-bottom: 1.5rem;
+}
+
+.layout.qiimeet-style .staff-detail-section h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+.layout.qiimeet-style .staff-detail-section-desc {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.layout.qiimeet-style .staff-detail-courses-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.layout.qiimeet-style .staff-detail-course-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.layout.qiimeet-style .staff-detail-course-name {
+  flex: 1;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+.layout.qiimeet-style .staff-detail-course-not-started {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.layout.qiimeet-style .badge--in_progress {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.layout.qiimeet-style .badge--completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.layout.qiimeet-style .staff-detail-progress-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.layout.qiimeet-style .staff-detail-progress-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.layout.qiimeet-style .staff-detail-progress-table th,
+.layout.qiimeet-style .staff-detail-progress-table td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.layout.qiimeet-style .staff-detail-progress-table th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}
+
+.layout.qiimeet-style .staff-detail-progress-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.layout.qiimeet-style .staff-detail-progress-table td strong {
+  display: block;
+}
+
+.layout.qiimeet-style .staff-detail-progress-table td small {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.layout.qiimeet-style .badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.layout.qiimeet-style .badge--passed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.layout.qiimeet-style .badge--failed,
+.layout.qiimeet-style .badge--locked {
+  background: #fefce8;
+  color: #b91c1c;
+}
+
+.layout.qiimeet-style .badge--not_started {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.layout.qiimeet-style .staff-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Content */
+.layout.qiimeet-style .content {
+  padding: 0;
+  display: grid;
+  gap: 24px;
+}
+
+/* Cards: white, light shadow */
+.layout.qiimeet-style .card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.layout.qiimeet-style .card h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #121212;
+  margin: 0 0 1rem;
+}
+
+/* Stats (dashboard) - no card background behind boxes */
+.layout.qiimeet-style .stats-bar {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.layout.qiimeet-style .stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.layout.qiimeet-style .stat-card {
+  background: #fff;
+  padding: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.layout.qiimeet-style .stat-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.layout.qiimeet-style .stat-card h3 {
+  margin: 12px 0 0;
+  color: #111827;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.layout.qiimeet-style .stat-details {
+  margin-top: 0.6rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.layout.qiimeet-style .stat-details small {
+  color: #4b5563;
+  font-size: 0.78rem;
+}
+
+.layout.qiimeet-style .progress-report-stats {
+  margin-bottom: 20px;
+}
+
+.layout.qiimeet-style .progress-stat-card {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.layout.qiimeet-style .progress-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.08);
+}
+
+.layout.qiimeet-style .progress-stat-card.active {
+  border-color: #E31E24;
+  box-shadow: 0 0 0 2px rgba(227, 30, 36, 0.15);
+}
+
+.layout.qiimeet-style .progress-report-card {
+  padding-top: 16px;
+}
+
+/* Quiz tab: compact policy at top left (click-to-edit) */
+.layout.qiimeet-style .tab-page-header--quiz {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.layout.qiimeet-style .quiz-policy-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.layout.qiimeet-style .quiz-policy-below-select {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.layout.qiimeet-style .quiz-policy-label {
+  color: #6b7280;
+}
+
+.layout.qiimeet-style .quiz-policy-sep {
+  margin: 0 0.25rem;
+  color: #9ca3af;
+}
+
+.layout.qiimeet-style .quiz-policy-inline-value {
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  font: inherit;
+  font-weight: 600;
+  color: #E31E24;
+  cursor: pointer;
+}
+
+.layout.qiimeet-style .quiz-policy-inline-value:hover:not(:disabled) {
+  background: #fefce8;
+  border-color: #fecaca;
+}
+
+.layout.qiimeet-style .quiz-policy-inline-value:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.layout.qiimeet-style .quiz-policy-inline-input {
+  width: 4rem;
+  padding: 0.25rem 0.4rem;
+  font: inherit;
+  font-size: 0.95rem;
+  border: 1px solid #E31E24;
+  border-radius: 6px;
+}
+
+/* Grids */
+.layout.qiimeet-style .grid.split {
+  grid-template-columns: 1fr 1fr;
+}
+
+.layout.qiimeet-style .grid.triple {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.layout.qiimeet-style .triple-span {
+  grid-column: 1 / span 3;
+}
+
+/* Form */
+.layout.qiimeet-style .form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.layout.qiimeet-style label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.layout.qiimeet-style input,
+.layout.qiimeet-style textarea,
+.layout.qiimeet-style select {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  color: #111827;
+  background: #fff;
+}
+
+.layout.qiimeet-style input:focus,
+.layout.qiimeet-style textarea:focus,
+.layout.qiimeet-style select:focus {
+  outline: none;
+  border-color: #E31E24;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.15);
+}
+
+.layout.qiimeet-style textarea {
+  min-height: 86px;
+}
+
+/* Buttons */
+.layout.qiimeet-style button {
+  border: none;
+  border-radius: 8px;
+  background: #E31E24;
+  color: #fff;
+  padding: 0 1rem;
+  height: 2.5rem;
+  min-height: 2.5rem;
+  line-height: 1;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.layout.qiimeet-style button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.layout.qiimeet-style button.ghost {
+  background: #fff;
+  color: #E31E24;
+  border: 1px solid #fecaca;
+}
+
+.layout.qiimeet-style button.ghost:hover {
+  background: #fefce8;
+}
+
+/* Recent actions (dashboard) */
+.layout.qiimeet-style .recent-actions {
+  margin-top: 0;
+}
+
+.layout.qiimeet-style .recent-actions-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #121212;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.layout.qiimeet-style .recent-actions-empty {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.layout.qiimeet-style .recent-actions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.layout.qiimeet-style .recent-actions-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 0.9rem;
+}
+
+.layout.qiimeet-style .recent-actions-item:last-child {
+  border-bottom: none;
+}
+
+.layout.qiimeet-style .recent-actions-time {
+  flex-shrink: 0;
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+.layout.qiimeet-style .recent-actions-message {
+  color: #374151;
+}
+
+.layout.qiimeet-style .recent-actions-actor {
+  margin-left: auto;
+  color: #6b7280;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.layout.qiimeet-style .recent-actions-pagination {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.layout.qiimeet-style .recent-actions-page-num {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* List */
+.layout.qiimeet-style .list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.layout.qiimeet-style .list-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+}
+
+.layout.qiimeet-style .list-item p,
+.layout.qiimeet-style .list-item small {
+  margin: 0.2rem 0 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.layout.qiimeet-style .list-item small {
+  display: block;
+}
+
+.layout.qiimeet-style .staff-item-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.layout.qiimeet-style .staff-stats-row {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.layout.qiimeet-style .staff-link-btn {
+  border: none;
+  background: none;
+  color: #E31E24;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  min-height: auto;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.layout.qiimeet-style .staff-activity-panel {
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  background: #f9fafb;
+  padding: 0.9rem 1rem;
+  margin-top: -0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.layout.qiimeet-style .staff-activity-panel h3 {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+.layout.qiimeet-style .staff-activity-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.layout.qiimeet-style .staff-activity-item {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+}
+
+/* Staff create form: show/hide and spacing */
+.layout.qiimeet-style .staff-create-form {
+  margin-bottom: 1.5rem;
+}
+
+.layout.qiimeet-style .staff-create-form-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.layout.qiimeet-style .staff-create-form .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.layout.qiimeet-style .staff-add-role-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.layout.qiimeet-style .staff-add-role-row input {
+  flex: 1;
+}
+
+.layout.qiimeet-style .staff-create-form .field-label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.layout.qiimeet-style .course-checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.layout.qiimeet-style .course-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.layout.qiimeet-style .course-checkbox-item:not(:last-child) {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.layout.qiimeet-style .course-checkbox-item input[type="checkbox"] {
+  width: auto;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #E31E24;
+  flex-shrink: 0;
+}
+
+.layout.qiimeet-style .course-checkbox-label {
+  flex: 1;
+}
+
+/* Course choice grid (Qiimeet lifestyle-style) */
+.layout.qiimeet-style .course-choice-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.layout.qiimeet-style .course-choice-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  color: #374151;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.layout.qiimeet-style .course-choice-box:hover {
+  border-color: #fecaca;
+  background: #fefce8;
+  color: #b91c1c;
+}
+
+.layout.qiimeet-style .course-choice-box.selected {
+  background: #E31E24;
+  border-color: #E31E24;
+  color: #fff;
+}
+
+.layout.qiimeet-style .course-choice-code {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.layout.qiimeet-style .course-choice-name {
+  font-size: 0.8rem;
+  opacity: 0.95;
+}
+
+/* Chips */
+.layout.qiimeet-style .chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.layout.qiimeet-style .chip {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+/* Structure (courses) */
+.layout.qiimeet-style .structure {
+  display: grid;
+  gap: 1rem;
+}
+
+.layout.qiimeet-style .subject-block {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  background: transparent;
+}
+
+.layout.qiimeet-style .subject-block h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.layout.qiimeet-style .subject-block ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.layout.qiimeet-style .subject-block li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid #e5e7eb;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.layout.qiimeet-style .subject-block li button {
+  flex-shrink: 0;
+}
+
+/* Question card, section row */
+.layout.qiimeet-style .question-card,
+.layout.qiimeet-style .section-row {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.5rem;
+  background: #fafafa;
+}
+
+/* Paste block */
+.layout.qiimeet-style .paste-block {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.layout.qiimeet-style .paste-block label {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.layout.qiimeet-style .paste-textarea {
+  min-height: 100px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+/* Courses list view */
+.layout.qiimeet-style .courses-list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.layout.qiimeet-style .courses-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.layout.qiimeet-style .courses-list-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #121212;
+}
+
+.layout.qiimeet-style .btn-create-course {
+  background: #E31E24;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout.qiimeet-style .btn-create-course:hover {
+  background: #b91c1c;
+}
+
+.layout.qiimeet-style .course-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.layout.qiimeet-style .course-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.layout.qiimeet-style .course-card:hover {
+  border-color: #E31E24;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.12);
+}
+
+.layout.qiimeet-style .course-card-body {
+  flex: 1;
+}
+
+.layout.qiimeet-style .course-card-code {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #E31E24;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.layout.qiimeet-style .course-card-name {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.35;
+}
+
+.layout.qiimeet-style .course-card-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.layout.qiimeet-style .course-card-btn {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: #E31E24;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.layout.qiimeet-style .course-card-btn:hover {
+  background: #b91c1c;
+}
+
+.layout.qiimeet-style .course-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.layout.qiimeet-style .course-card-actions .course-card-btn {
+  width: auto;
+  flex: 1;
+  min-width: 100px;
+}
+
+.layout.qiimeet-style .course-card-with-delete {
+  position: relative;
+}
+
+.layout.qiimeet-style .course-card-top-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.layout.qiimeet-style .course-card-edit-icon,
+.layout.qiimeet-style .course-card-delete-icon {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.layout.qiimeet-style .course-card-edit-icon:hover:not(:disabled) {
+  color: #E31E24;
+  background: #fefce8;
+}
+
+.layout.qiimeet-style .course-card-delete-icon:hover:not(:disabled) {
+  color: #dc2626;
+  background: #fefce8;
+}
+
+.layout.qiimeet-style .course-card-edit-icon:disabled,
+.layout.qiimeet-style .course-card-delete-icon:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.layout.qiimeet-style .course-detail-delete-btn {
+  position: static;
+  width: 36px;
+  height: 36px;
+}
+
+/* Delete course modal */
+.delete-course-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.delete-course-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.delete-course-modal-title {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.delete-course-modal-desc {
+  margin: 0 0 20px;
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.45;
+}
+
+.delete-course-modal-desc strong {
+  color: #111827;
+}
+
+.delete-course-modal-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+
+.delete-course-modal-input:focus {
+  outline: none;
+  border-color: #E31E24;
+  box-shadow: 0 0 0 2px rgba(227, 30, 36, 0.2);
+}
+
+.delete-course-modal-error {
+  margin: 0 0 12px;
+  font-size: 0.875rem;
+  color: #dc2626;
+}
+
+.delete-course-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.delete-course-modal-delete-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background: #dc2626;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.delete-course-modal-delete-btn:hover:not(:disabled) {
+  background: #b91c1c;
+}
+
+.delete-course-modal-delete-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+/* Edit course modal */
+.edit-course-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.edit-course-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.edit-course-modal-title {
+  margin: 0 0 20px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.edit-course-modal-label {
+  display: block;
+  margin: 0 0 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.edit-course-modal-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.edit-course-modal-input:focus {
+  outline: none;
+  border-color: #E31E24;
+  box-shadow: 0 0 0 2px rgba(227, 30, 36, 0.2);
+}
+
+.edit-course-modal-error {
+  margin: -8px 0 12px;
+  font-size: 0.875rem;
+  color: #dc2626;
+}
+
+.edit-course-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.edit-course-modal-save-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background: #E31E24;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.edit-course-modal-save-btn:hover:not(:disabled) {
+  background: #b91c1c;
+}
+
+.edit-course-modal-save-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+/* Assign courses modal – list with checkboxes */
+.assign-courses-modal {
+  max-width: 420px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-staff-modal {
+  max-width: 480px;
+}
+
+.edit-staff-modal form {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.edit-staff-modal .assign-courses-list {
+  flex: 1;
+  min-height: 0;
+}
+
+.assign-courses-modal .edit-course-modal-label {
+  margin-bottom: 12px;
+}
+
+.assign-courses-list {
+  overflow-y: auto;
+  max-height: 320px;
+  margin-bottom: 4px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px;
+  background: #fafafa;
+}
+
+.assign-courses-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.assign-courses-item:hover {
+  background: #f3f4f6;
+}
+
+.assign-courses-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #E31E24;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.assign-courses-name {
+  flex: 1;
+  font-weight: 500;
+  color: #111827;
+}
+
+.assign-courses-code {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Add course modal */
+.add-course-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.add-course-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.add-course-modal-title {
+  margin: 0 0 20px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.add-course-modal-label {
+  display: block;
+  margin: 0 0 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.add-course-modal-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.add-course-modal-input:focus {
+  outline: none;
+  border-color: #E31E24;
+  box-shadow: 0 0 0 2px rgba(227, 30, 36, 0.2);
+}
+
+.add-course-modal-error {
+  margin: -8px 0 12px;
+  font-size: 0.875rem;
+  color: #dc2626;
+}
+
+.add-course-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.add-course-modal-create-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background: #E31E24;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-course-modal-create-btn:hover:not(:disabled) {
+  background: #b91c1c;
+}
+
+.add-course-modal-create-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.layout.qiimeet-style .btn-add-course-ghost {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #E31E24;
+  background: #fff;
+  color: #E31E24;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.layout.qiimeet-style .btn-add-course-ghost:hover:not(:disabled) {
+  background: #fefce8;
+}
+
+.layout.qiimeet-style .btn-add-course-ghost:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.layout.qiimeet-style .btn-add-subject {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #E31E24;
+  background: #E31E24;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.layout.qiimeet-style .btn-add-subject:hover:not(:disabled) {
+  background: #b91c1c;
+  border-color: #b91c1c;
+  color: #fff;
+}
+
+.layout.qiimeet-style .btn-add-subject:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.layout.qiimeet-style .course-detail-structure-actions {
+  margin-top: 1rem;
+}
+
+.layout.qiimeet-style .module-editor-form {
+  padding: 1.25rem;
+}
+
+.layout.qiimeet-style .module-editor-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.layout.qiimeet-style .module-editor-title-input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.module-editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.6rem 0;
+  margin-bottom: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.module-editor-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.module-editor-toolbar-sep {
+  width: 1px;
+  height: 1.5rem;
+  background: #d1d5db;
+  margin: 0 0.25rem;
+}
+
+
+.module-editor-toolbar-btn {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #fff;
+  color: #1f2937;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.module-editor-toolbar-btn:hover {
+  background: #f9fafb;
+  border-color: #E31E24;
+  color: #E31E24;
+}
+
+.module-editor-toolbar-btn strong,
+.module-editor-toolbar-btn em,
+.module-editor-toolbar-btn u,
+.module-editor-toolbar-btn s {
+  color: inherit;
+  font-weight: inherit;
+}
+
+.layout.qiimeet-style .module-editor-content {
+  min-height: 280px;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #111;
+  outline: none;
+  background: #fff;
+}
+
+.layout.qiimeet-style .module-editor-content:empty::before {
+  content: attr(data-placeholder);
+  color: #9ca3af;
+}
+
+.layout.qiimeet-style .btn-edit-ghost {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.layout.qiimeet-style .btn-edit-ghost:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #E31E24;
+  color: #E31E24;
+}
+
+.layout.qiimeet-style .btn-edit-ghost.small {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.layout.qiimeet-style .btn-delete-ghost {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  background: #fff;
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.layout.qiimeet-style .btn-delete-ghost:hover:not(:disabled) {
+  background: #fefce8;
+  border-color: #dc2626;
+}
+
+.layout.qiimeet-style .btn-delete-ghost.small {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.layout.qiimeet-style .btn-edit-ghost:disabled,
+.layout.qiimeet-style .btn-delete-ghost:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Staff card: time top right, profile icon left of name/ID, role under name */
+.layout.qiimeet-style .staff-card {
+  position: relative;
+}
+
+.layout.qiimeet-style .staff-card-time {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.layout.qiimeet-style .staff-card-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.layout.qiimeet-style .staff-card-avatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #fefce8;
+  border: 1px solid #fecaca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E31E24;
+}
+
+.layout.qiimeet-style .staff-card-avatar .tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout.qiimeet-style .staff-card-avatar .tab-icon svg {
+  stroke: currentColor;
+}
+
+.layout.qiimeet-style .staff-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.layout.qiimeet-style .staff-card-info .course-card-name {
+  margin: 0 0 4px;
+}
+
+.layout.qiimeet-style .staff-card-info .course-card-code {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.layout.qiimeet-style .staff-card-role {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.layout.qiimeet-style .staff-role-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.layout.qiimeet-style .staff-role-card {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 14px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.layout.qiimeet-style .staff-role-card:hover {
+  border-color: #fecaca;
+  transform: translateY(-1px);
+}
+
+.layout.qiimeet-style .staff-role-card.active {
+  border-color: #E31E24;
+  box-shadow: 0 0 0 2px rgba(227, 30, 36, 0.12);
+}
+
+.layout.qiimeet-style .staff-role-card-name {
+  font-size: 0.95rem;
+  color: #111827;
+  font-weight: 600;
+}
+
+.layout.qiimeet-style .staff-role-card-count {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.layout.qiimeet-style .course-cards-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 24px;
+  background: #fff;
+  border: 1px dashed #e5e7eb;
+  border-radius: 12px;
+}
+
+.layout.qiimeet-style .course-cards-empty p {
+  margin: 0 0 16px;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* Tab page header (same format for Admins, Quiz, Staff) */
+.layout.qiimeet-style .tab-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.layout.qiimeet-style .tab-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.layout.qiimeet-style .notifications-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.layout.qiimeet-style .notifications-filter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.layout.qiimeet-style .notifications-filter-select {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #111827;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+}
+
+.layout.qiimeet-style .tab-page-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #121212;
+}
+
+.layout.qiimeet-style .list-empty {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* Page header with back arrow (same format across site) */
+.layout.qiimeet-style .page-header-with-back {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.layout.qiimeet-style .page-header-back-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: #fefce8;
+  color: #111827;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.layout.qiimeet-style .page-header-back-btn svg {
+  flex-shrink: 0;
+}
+
+.layout.qiimeet-style .page-header-back-btn svg path {
+  stroke: #111827;
+}
+
+.layout.qiimeet-style .page-header-back-btn:hover {
+  background: #fce7eb;
+  color: #E31E24;
+}
+
+.layout.qiimeet-style .page-header-back-btn:hover svg path {
+  stroke: #E31E24;
+}
+
+.layout.qiimeet-style .page-header-back-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(227, 30, 36, 0.25);
+}
+
+/* Course detail view */
+.layout.qiimeet-style .course-detail-view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.layout.qiimeet-style .course-detail-header {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.layout.qiimeet-style .course-detail-header-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.layout.qiimeet-style .course-detail-title {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.layout.qiimeet-style .course-detail-code {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Course detail box: same border/style as main tab (card) */
+.layout.qiimeet-style .course-detail-box {
+  margin-bottom: 24px;
+}
+
+.layout.qiimeet-style .course-detail-box .course-detail-header {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Subject detail (module list) header: red bg, white text and arrow */
+.layout.qiimeet-style .subject-detail-header {
+  background: #E31E24;
+  color: #fff;
+  margin: -1px -1px 0;
+  padding: 1rem 1rem 1rem;
+  border-radius: 8px 8px 0 0;
+  border-bottom: none;
+}
+
+.layout.qiimeet-style .subject-detail-header .course-detail-title,
+.layout.qiimeet-style .subject-detail-header .course-detail-code {
+  color: #fff;
+}
+
+.layout.qiimeet-style .subject-detail-header .course-detail-code {
+  opacity: 0.9;
+}
+
+.layout.qiimeet-style .subject-detail-back-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+.layout.qiimeet-style .subject-detail-back-btn svg path {
+  stroke: #fff;
+}
+
+.layout.qiimeet-style .subject-detail-back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #fff;
+  color: #fff;
+}
+
+.layout.qiimeet-style .subject-detail-header-actions .btn-add-subject {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
+.layout.qiimeet-style .subject-detail-header-actions .btn-add-subject:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+  color: #fff;
+}
+
+.layout.qiimeet-style .subject-detail-header-actions .course-card-edit-icon,
+.layout.qiimeet-style .subject-detail-header-actions .course-card-delete-icon {
+  color: #fff;
+}
+
+.layout.qiimeet-style .subject-detail-header-actions .course-card-edit-icon:hover:not(:disabled),
+.layout.qiimeet-style .subject-detail-header-actions .course-card-delete-icon:hover:not(:disabled) {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Module index badge: circled number, light yellow bg */
+.layout.qiimeet-style .module-index-badge {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fefce8;
+  color: #111827;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fde047;
+}
+
+.layout.qiimeet-style .course-card-body-with-index {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.layout.qiimeet-style .course-card-body-inner {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Course title, code and actions - no card/border, on page background */
+.layout.qiimeet-style .course-detail-structure {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.layout.qiimeet-style .course-detail-structure-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+  border-bottom: none;
+}
+
+.layout.qiimeet-style .course-detail-structure-title {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.layout.qiimeet-style .course-detail-structure-code {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.layout.qiimeet-style .course-detail-structure-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.layout.qiimeet-style .course-detail-structure-subjects-label {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #121212;
+}
+
+.layout.qiimeet-style .course-detail-structure h3 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.layout.qiimeet-style .subject-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.layout.qiimeet-style .subject-block-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.layout.qiimeet-style .subject-block-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.layout.qiimeet-style .course-detail-structure .subject-block h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.layout.qiimeet-style .subject-block-header + ul {
+  margin-top: 0;
+}
+
+/* Subject cards: same as course cards, single View & Edit floated right */
+.layout.qiimeet-style .subject-cards .structure-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.layout.qiimeet-style .subject-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.layout.qiimeet-style .subject-card-actions .course-card-btn {
+  width: auto;
+  flex: none;
+  min-width: 0;
+}
+
+.layout.qiimeet-style .subject-modules-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.layout.qiimeet-style .subject-modules-title {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.layout.qiimeet-style .subject-modules-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.layout.qiimeet-style .subject-modules-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid #e5e7eb;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.layout.qiimeet-style .subject-modules-list li .module-item-actions {
+  flex-shrink: 0;
+}
+
+.layout.qiimeet-style .module-item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.layout.qiimeet-style .subject-block li .module-item-actions button {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.layout.qiimeet-style .structure-empty {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.layout.qiimeet-style .course-detail-forms {
+  margin-top: 8px;
+}
+
+.layout.qiimeet-style .course-detail-forms .card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.layout.qiimeet-style .course-create-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Hamburger (visible only on mobile) */
+.layout.qiimeet-style .hamburger-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1002;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.layout.qiimeet-style .hamburger-btn .hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #121212;
+  border-radius: 1px;
+}
+
+.layout.qiimeet-style .sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 900px) {
+  .layout.qiimeet-style {
+    padding: 16px;
+  }
+
+  .layout.qiimeet-style .hamburger-btn {
+    display: flex;
+  }
+
+  .layout.qiimeet-style .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    max-width: 85vw;
+    min-height: 100vh;
+    height: 100vh;
+    z-index: 1001;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    border-radius: 0;
+  }
+
+  .layout.qiimeet-style.sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .layout.qiimeet-style.sidebar-open .sidebar-overlay {
+    display: block;
+  }
+
+  .layout.qiimeet-style .main-wrap {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+  }
+
+  .layout.qiimeet-style .dashboard-header {
+    padding-left: 56px;
+  }
+
+  .layout.qiimeet-style .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .layout.qiimeet-style .grid.split,
+  .layout.qiimeet-style .grid.triple {
+    grid-template-columns: 1fr;
+  }
+
+  .layout.qiimeet-style .triple-span {
+    grid-column: auto;
+  }
+
+  .layout.qiimeet-style .course-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .layout.qiimeet-style .courses-list-header,
+  .layout.qiimeet-style .tab-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 1100px) {
+  .layout.qiimeet-style .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .layout.qiimeet-style .grid.split,
+  .layout.qiimeet-style .grid.triple {
+    grid-template-columns: 1fr;
+  }
+
+  .layout.qiimeet-style .triple-span {
+    grid-column: auto;
+  }
+}
+
+/* Initial app loading screen */
+.app-initial-load {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #fff;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.app-initial-load-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e5e7eb;
+  border-right-color: #E31E24;
+  border-radius: 50%;
+  animation: btn-spin 0.7s linear infinite;
+}
+.app-initial-load-text {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* Button loading state */
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+button:disabled .btn-spinner,
+.btn-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.admin-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #fefce8;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.admin-login-brand {
+  background: #e31e24;
+  color: #fff;
+  padding: 24px 20px 20px;
+  text-align: center;
+}
+
+.admin-login-logo {
+  display: block;
+  width: 72px;
+  height: 72px;
+  max-width: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.admin-login-brand h1 {
+  margin: 12px 0 4px;
+  font-size: 1.5rem;
+}
+
+.admin-login-brand p {
+  margin: 0;
+  opacity: 0.95;
+  font-size: 0.95rem;
+}
+
+.admin-login-form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-login-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.admin-login-form input {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.admin-login-form button[type="submit"] {
+  margin-top: 8px;
+  padding: 12px;
+  background: #e31e24;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-login-form button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.admin-login-error {
+  margin: 0;
+  color: #dc2626;
+  font-size: 0.9rem;
+}
+
+.admin-login-password-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.admin-login-password-wrap input {
+  width: 100%;
+  padding-right: 44px;
+}
+
+.admin-login-password-toggle {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.admin-login-password-toggle:hover {
+  color: #374151;
+  background: #f3f4f6;
+}
+
+.account-card h3 {
+  margin: 20px 0 12px;
+}
+
+.account-password-note {
+  margin: 16px 0 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.form-error {
+  color: #dc2626;
+  margin: 0;
+}
+
+.form-success {
+  color: #059669;
+  margin: 0;
+}
+
+.list-item-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}

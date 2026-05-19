@@ -14,4 +14,38 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# stafftrainingadmin" 
+# Crunches Admin (React + Vite)
+
+## Cloudflare deploy
+
+This app is a **static Vite build** (`dist/`). Do **not** run `wrangler deploy` alone — build first.
+
+### If the repo root is this folder (`crunchesadmin`)
+
+In **Cloudflare Workers** (or Workers Builds) project settings:
+
+| Setting | Value |
+|--------|--------|
+| **Root directory** | `/` (or leave empty) |
+| **Build command** | `npm ci && npm run build` |
+| **Deploy command** | `npx wrangler deploy` |
+
+Or use a single deploy command: `npm run deploy`
+
+### If the repo root is a parent folder
+
+Set **Root directory** to the path of this app, e.g. `Training/Adminsite/crunchesadmin`, so Cloudflare finds `package.json`.  
+If you see *"No dependencies detected"*, the root directory is wrong.
+
+### Environment variables (build time)
+
+- `VITE_API_BASE_URL` — backend API URL (default: `https://crunches-training.fly.dev`)
+
+### Alternative: Cloudflare Pages
+
+Create a **Pages** project instead of Workers:
+
+- **Framework preset:** Vite  
+- **Build command:** `npm run build`  
+- **Build output directory:** `dist`  
+- No `wrangler deploy` needed.
