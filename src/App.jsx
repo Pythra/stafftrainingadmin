@@ -153,6 +153,8 @@ function getActivityItems(member, type, payload) {
 function getActionActor(action) {
   return (
     action?.performedByName ||
+    action?.performedByEmail ||
+    action?.performedByAdminId ||
     action?.performedBy ||
     action?.actorName ||
     action?.actor ||
@@ -160,7 +162,7 @@ function getActionActor(action) {
     action?.user ||
     action?.adminName ||
     action?.admin ||
-    "Unknown user"
+    "Unknown admin"
   );
 }
 
