@@ -282,6 +282,28 @@ const DEFAULT_STAFF_ROLES = [
 
 const ACTION_LOGS_PAGE_SIZE = 6;
 
+function getStaffDeleteId(member) {
+  if (member == null) return "";
+  if (typeof member === "string" || typeof member === "number") {
+    return String(member).trim();
+  }
+  const mongoId = String(member.id ?? member._id ?? "").trim();
+  if (mongoId) return mongoId;
+  return String(member.staffId ?? "").trim();
+}
+
+function isSameStaffMember(a, b) {
+  if (!a || !b) return false;
+  const idA = getStaffDeleteId(a);
+  const idB = getStaffDeleteId(b);
+  if (idA && idB && idA === idB) return true;
+  const staffA =
+    typeof a === "object" ? String(a.staffId ?? "").trim().toUpperCase() : "";
+  const staffB =
+    typeof b === "object" ? String(b.staffId ?? "").trim().toUpperCase() : "";
+  return Boolean(staffA && staffB && staffA === staffB);
+}
+
 function App() {
   const { api, logout, admin, isSuperAdmin } = useAdminAuth();
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -1340,32 +1362,32 @@ function App() {
   async function handleConfirmDeleteStaff(e) {
     e?.preventDefault?.();
     if (!staffToDelete) return;
-    const memberId = staffToDelete;
-    const idCandidates = [memberId?.id, memberId?._id, memberId?.staffId, memberId]
-      .map((value) => (value == null ? "" : String(value).trim()))
-      .filter(Boolean);
-    if (idCandidates.length === 0) {
+    const deleteId = getStaffDeleteId(staffToDelete);
+    if (!deleteId) {
       logAction("Unable to delete: missing staff identifier.");
       return;
     }
+    const wasViewingDeleted =
+      selectedStaffForDetail && isSameStaffMember(staffToDelete, selectedStaffForDetail);
     setBusyAction("deleteStaff");
     try {
-      const deleteAttempts = idCandidates.map((id) => ({
-        path: `/api/admin/staff/${encodeURIComponent(id)}`,
-        options: { method: "DELETE" },
-      }));
-      for (const { path, options } of deleteAttempts) {
-        await api(path, options);
-      }
-      await loadStaff();
-      if (selectedStaffForDetail && idCandidates.includes(String(selectedStaffForDetail.id ?? selectedStaffForDetail.staffId ?? ""))) {
+      await api(`/api/admin/staff/${encodeURIComponent(deleteId)}`, { method: "DELETE" });
+      closeDeleteStaffModal();
+      if (wasViewingDeleted) {
         setSelectedStaffForDetail(null);
         setStaffDetailProgress(null);
+        setStaffActivityView({
+          memberId: null,
+          type: "passed",
+          loading: false,
+          error: "",
+          items: [],
+        });
       }
+      await loadStaff();
       logAction("Staff deleted.");
-      closeDeleteStaffModal();
     } catch (error) {
-      logAction(error.message);
+      logAction(error.message || "Failed to delete staff.");
     } finally {
       setBusyAction(null);
     }
@@ -3691,7 +3713,14 @@ function App() {
             <div className="delete-course-modal" onClick={(e) => e.stopPropagation()}>
               <h3 className="delete-course-modal-title">Delete staff member</h3>
               <p className="delete-course-modal-desc">
-                Delete this staff member? This cannot be undone.
+                {typeof staffToDelete === "object" && staffToDelete?.fullName ? (
+                  <>
+                    Delete <strong>{staffToDelete.fullName}</strong>
+                    {staffToDelete.staffId ? ` (${staffToDelete.staffId})` : ""}? This cannot be undone.
+                  </>
+                ) : (
+                  "Delete this staff member? This cannot be undone."
+                )}
               </p>
               <div className="delete-course-modal-actions">
                 <button type="button" className="btn-edit-ghost" onClick={closeDeleteStaffModal}>
