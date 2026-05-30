@@ -20,7 +20,7 @@ function EyeIcon({ open }) {
 }
 
 export default function AdminLogin({ onLogin }) {
-  const [email, setEmail] = useState("staffonlineacademy@gmail.com");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -31,9 +31,15 @@ export default function AdminLogin({ onLogin }) {
     setError("");
     setLoading(true);
     try {
-      await onLogin(email.trim().toLowerCase(), password);
+      const normalizedPassword = password.replace(/[\u200B-\u200D\uFEFF]/g, "").trim();
+      await onLogin(email.trim().toLowerCase(), normalizedPassword);
     } catch (err) {
-      setError(err.message || "Login failed");
+      const msg = err.message || "Login failed";
+      setError(
+        msg === "Invalid email or password"
+          ? "Invalid email or password. Use the exact email and password from the reset email (or the popup after reset). Check the account is not deactivated."
+          : msg
+      );
     } finally {
       setLoading(false);
     }
@@ -43,8 +49,8 @@ export default function AdminLogin({ onLogin }) {
     <div className="admin-login-page">
       <div className="admin-login-card">
         <div className="admin-login-brand">
-          <img src="/crunches_logo.png" alt="Crunchies" className="admin-login-logo" />
-          <h1>Crunchies Admin</h1>
+          <img src="/crunches_logo.png" alt="Staff Academy" className="admin-login-logo" />
+          <h1>Staff Academy Admin</h1>
           <p>Sign in with your admin email and password</p>
         </div>
         <form className="admin-login-form" onSubmit={handleSubmit}>

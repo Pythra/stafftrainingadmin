@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
 import { useAdminAuth } from "./AdminAuthContext.jsx";
+import ModuleEditorToolbar from "./components/ModuleEditorToolbar.jsx";
 
 // Parse pasted module content: blocks separated by blank lines; first line of each block = heading, rest = text.
 // First block goes to body; subsequent blocks become sections.
@@ -305,7 +306,7 @@ function isSameStaffMember(a, b) {
 }
 
 function App() {
-  const { api, logout, admin, isSuperAdmin } = useAdminAuth();
+  const { api, logout, admin, isSuperAdmin, token } = useAdminAuth();
   const [activeTab, setActiveTab] = useState("dashboard");
   const [passwordForm, setPasswordForm] = useState({
     currentPassword: "",
@@ -753,15 +754,24 @@ function App() {
     }
   }, [activeTab, isSuperAdmin]);
 
+  const moduleEditorInitKeyRef = useRef(null);
+
   useEffect(() => {
-    if (!showModuleEditor) return;
+    if (!showModuleEditor) {
+      moduleEditorInitKeyRef.current = null;
+      return;
+    }
+    const initKey = editingModuleKey ?? "__new__";
+    if (moduleEditorInitKeyRef.current === initKey) return;
+    moduleEditorInitKeyRef.current = initKey;
+    const html = moduleEditorBodyHtml;
     const id = requestAnimationFrame(() => {
       if (moduleEditorContentRef.current) {
-        moduleEditorContentRef.current.innerHTML = moduleEditorBodyHtml;
+        moduleEditorContentRef.current.innerHTML = html;
       }
     });
     return () => cancelAnimationFrame(id);
-  }, [showModuleEditor, moduleEditorBodyHtml]);
+  }, [showModuleEditor, editingModuleKey, moduleEditorBodyHtml]);
 
   useEffect(() => {
     if (selectedCourseCode) {
@@ -1635,7 +1645,18 @@ function App() {
       const data = await api(`/api/admin/subadmins/${subadminId}/reset-password`, {
         method: "POST",
       });
-      logAction(data.message || "Subadmin password reset.");
+      const who = data.email ? ` (${data.email})` : "";
+      if (data.temporaryPassword) {
+        const emailNote = data.emailSent
+          ? " It was also emailed."
+          : data.emailError
+            ? ` Email failed: ${data.emailError}`
+            : "";
+        window.alert(
+          `New password${who}:\n\n${data.temporaryPassword}\n\nUse this exact email and password on the admin login page.${emailNote}`
+        );
+      }
+      logAction(data.message || `Subadmin password reset${who}.`);
     } catch (error) {
       logAction(error.message);
     } finally {
@@ -1785,9 +1806,9 @@ function App() {
       <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} aria-hidden="true" />
       <aside className="sidebar">
         <div className="brand brand-crunchies">
-          <img src="/crunches_logo.png" alt="Crunchies" className="brand-logo-img" />
+          <img src="/crunches_logo.png" alt="Staff Academy" className="brand-logo-img" />
           <div className="brand-text">
-            <h1>Crunchies Admin</h1>
+            <h1>Staff Academy Admin</h1>
             <p>Training Control Center</p>
           </div>
         </div>
@@ -2281,6 +2302,11 @@ function App() {
                     onChange={(e) => setModuleEditorTitle(e.target.value)}
                   />
                   <label className="module-editor-label">Content</label>
+                  <ModuleEditorToolbar
+                    editorRef={moduleEditorContentRef}
+                    token={token}
+                    onLog={logAction}
+                  />
                   <div
                     ref={moduleEditorContentRef}
                     className="module-editor-content"

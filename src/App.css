@@ -1755,6 +1755,41 @@
   color: #9ca3af;
 }
 
+.layout.qiimeet-style .module-editor-content img,
+.layout.qiimeet-style .module-editor-content .module-editor-inserted-image {
+  max-width: 100%;
+  min-height: 48px;
+  height: auto;
+  display: block;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  object-fit: contain;
+}
+
+.module-editor-toolbar-wrap {
+  margin-bottom: 0.5rem;
+}
+
+.module-editor-upload-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.module-editor-upload-error {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.module-editor-toolbar-btn--image {
+  min-width: 4.5rem;
+}
+
 .layout.qiimeet-style .btn-edit-ghost {
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
